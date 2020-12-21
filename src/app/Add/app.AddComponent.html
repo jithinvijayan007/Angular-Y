@@ -1,0 +1,107 @@
+
+<div class="container">
+    <h1 class="text-center text-info ">Add Sales Data</h1>
+    <form class="form-horizontal col-lg-12 col-sm-12" >
+
+        <div class="form-group">
+        <div class="col-md-12">
+            <label>Date :</label>
+
+              </div>
+          </div>
+          <div class="form-group">
+              <div class="col-md-6">
+            <label>Phone Number :</label>
+              <div>
+                  <input [(ngModel)]=UserModel.bint_mobile class="form-control" id="focusedInput"  type="text" placeholder="Phone Number" name="bint_mobile" required>
+              </div>
+              </div>
+
+
+
+
+
+          <div class="col-md-6">
+        <label>Full Name :</label>
+          <div>
+              <input [(ngModel)]=UserModel.vchr_name class="form-control" id="focusedInput" placeholder="Full Name"  type="text" name="vchr_name" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+          <div class="col-md-6">
+        <label for="vchr_service_name">Services :</label>
+        <select [(ngModel)]=UserModel.vchr_service_name  name="vchr_service_name" class=" form-control" >
+          <option value="">---Select---</option>
+          <option value="Bus Service">Bus Ticket</option>
+          <option value="Flight Ticket">Flight Ticket</option>
+          <option value="Tour">Train Ticket</option>
+          <option value="Train Ticket">Tour Booking</option>
+          <option value="VISA Services">Tour Booking</option>
+        </select>
+    </div>
+
+
+    <div class="col-md-6">
+        <label for="status">Payment Status :</label>
+
+        <div class="col-md-12">
+           <input [(ngModel)]=UserModel.int_paid_status type="radio" name="int_paid_status" value=1  required>&nbsp;
+        <label for="paid">Not Paid</label>&nbsp;&nbsp;
+        <input [(ngModel)]=UserModel.int_paid_status type="radio" name="int_paid_status" value=0  >&nbsp;
+        <label for="paid">Paid</label>&nbsp;&nbsp;
+        </div>
+        </div>
+      </div>
+      <div class="form-group ">
+          <div class="col-md-4">
+        <label class="col">Amount :</label>
+              <input [(ngModel)]=UserModel.dbl_amount class="form-control" placeholder="Amount" id="focusedInput"  type="text" name="dbl_amount" required>
+
+              </div>
+              <div class="col-md-4">
+
+
+
+       <label class="col">Service Charge :</label>
+
+              <input [(ngModel)]=UserModel.dbl_service_charge class="form-control"  id="focusedInput" placeholder="Service Charge" type="text" name="dbl_service_charge" required>
+              </div>
+              <div class="col-md-4">
+
+
+       <label class="col">Total Amount :        </label>
+        <input [(ngModel)]=UserModel.dbl_total class="form-control"  id="focusedInput"  type="text" placeholder="Total Amount" name="dbl_total" required>
+      </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-6">
+        <label for="status">Service Status :</label>&nbsp;&nbsp;&nbsp;
+
+            <div>
+
+        <input [(ngModel)]=UserModel.int_staus type="radio" name="int_staus" value=1  required>&nbsp;
+        <label for="compleated">Compleated</label>&nbsp;&nbsp;
+
+        <input [(ngModel)]=UserModel.int_staus type="radio" name="int_staus" value=0  >&nbsp;
+        <label for="pending">Pending</label>
+        </div>
+            </div>
+            <div class="col-md-3">
+
+
+        <label>Reference Number :</label>
+          <div>
+              <input [(ngModel)]=UserModel.vchr_ref_no class="form-control" id="focusedInput" placeholder="Reference Number" type="text" name="vchr_ref_no" required>
+          </div>
+          </div>
+      </div>
+
+    <button (click)="Add()" type="submit" class="btn btn-primary">Submit</button><br>
+    
+    </form>
+    <br>
+    <br><br><br>
+
+</div>
