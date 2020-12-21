@@ -6,7 +6,7 @@ import { HomeComponent } from './Home/app.HomeComponent';
 import { AddComponent } from './Add/app.AddComponent';
 import { ListComponent } from './List/app.ListComponent';
 import { FormsModule } from "@angular/forms";
-import { UsersService } from 'src/app/customer-service.service';
+
 import { HttpClientModule } from '@angular/common/http';
 
 
