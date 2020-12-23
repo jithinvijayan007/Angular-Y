@@ -5,7 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './Home/app.HomeComponent';
 import { AddComponent } from './Add/app.AddComponent';
 import { ListComponent } from './List/app.ListComponent';
+import { ViewComponent } from './View/app.ViewComponent';
 import { FormsModule } from "@angular/forms";
+import { DetailComponent } from './Detail/app.DetailComponent';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -14,7 +16,9 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     HomeComponent,
     AddComponent,
-    ListComponent
+    ListComponent,
+    ViewComponent,
+    DetailComponent,
 
   ],
   imports: [

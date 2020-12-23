@@ -50,9 +50,9 @@
         <label for="status">Payment Status :</label>
 
         <div class="col-md-12">
-           <input [(ngModel)]=UserModel.int_paid_status type="radio" name="int_paid_status" value=1>&nbsp;
+           <input [(ngModel)]=UserModel.int_paid_status type="radio" name="int_paid_status" value="1">&nbsp;
         <label for="paid">Not Paid</label>&nbsp;&nbsp;
-        <input [(ngModel)]=UserModel.int_paid_status type="radio" name="int_paid_status" value=0>&nbsp;
+        <input [(ngModel)]=UserModel.int_paid_status type="radio" name="int_paid_status" value="0">&nbsp;
         <label for="paid">Paid</label>&nbsp;&nbsp;
         </div>
         </div>
@@ -84,10 +84,10 @@
 
             <div>
 
-        <input [(ngModel)]=UserModel.int_status type="radio" name="int_staus" value=1>&nbsp;
+        <input [(ngModel)]=UserModel.int_status type="radio" name="int_staus" value="1">&nbsp;
         <label for="compleated">Compleated</label>&nbsp;&nbsp;
 
-        <input [(ngModel)]=UserModel.int_status type="radio" name="int_staus" value=0>&nbsp;
+        <input [(ngModel)]=UserModel.int_status type="radio" name="int_staus" value="0">&nbsp;
         <label for="pending">Pending</label>
         </div>
             </div>
@@ -96,7 +96,7 @@
 
         <label>Reference Number :</label>
           <div>
-              <input [(ngModel)]=UserModel.vchr_ref_no class="form-control" id="focusedInput" placeholder="Reference Number" type="text" name="vchr_ref_no">
+              <input [(ngModel)]=UserModel.vchr_ref_no class="form-control" id="focusedInput" type="text" name="vchr_ref_no">
           </div>
           </div>
       </div>

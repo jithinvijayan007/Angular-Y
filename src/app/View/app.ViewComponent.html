@@ -1,0 +1,41 @@
+<div>
+<h1 style="color:black; text-align:center;">Sales List</h1>
+<div class="container">
+  <div class="jumbotron">
+<table class="table table-success table-striped">
+    <thead>
+      <tr>
+        <th>Sale Date</th>
+        <th>Customer Mobile</th>
+        <th>Service Type</th>
+        <th>Amount</th>
+
+        <th>Service Charge</th>        
+        
+        <th>Total Amount </th>
+        <th>Payment Status </th>
+        <th>Detail View </th>
+       
+        
+      </tr>
+      <tr *ngFor = "let user of ins_data">
+        <td>{{ user.dat_sale | date}}</td>                
+        <td>{{ user.fk_customer__bint_mobile }}</td>
+        <td>{{ user.fk_service__vchr_name }}</td>
+        <td>{{ user.dbl_amount }}</td>
+        <td>{{ user.dbl_service_charge }}</td>
+        <td>{{ user.dbl_total }}</td>
+        <td>{{ user.int_paid_status==1?"Paid":"Not Paid" }}</td>
+        
+        <td><button (click)="Display(user.pk_bint_id)">Details</button></td>
+        
+        
+        
+        
+        
+      </tr>
+    </thead>
+  </table>
+  </div>
+</div>
+ 

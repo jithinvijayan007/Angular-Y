@@ -34,25 +34,26 @@ export class ListComponent {
     this.ListModels.push(this.ListModel);
           console.log(this.ListModel);
           
-          this.custservice.getdata('api/data',this.ListModel).subscribe((res) => {
-            console.log(res)
-            console.log("abvcd");
+          this.custservice.getdata('api/data',this.ListModel)
+        
             
-          },err =>{
-            console.log(err)
-          });
-          this.ListModel = new ListUser();
-          {
-            this.custservice.getA('api/data').subscribe((res) => {
-              this.ins_data = res
-              console.log(this.ins_data);
-          },
-          err =>{
-            this.ins_data = err
-          });
+           
+
+            
+            
+          }
+          // this.ListModel = new ListUser();
+          // {
+          //   this.custservice.getA('api/data').subscribe((res) => {
+          //     this.ins_data = res
+          //     console.log(this.ins_data);
+          // },
+          // err =>{
+          //   this.ins_data = err
+          // });
+          
           
     
   
-        }
+        
       }
-}

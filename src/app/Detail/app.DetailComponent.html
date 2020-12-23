@@ -1,0 +1,62 @@
+<h1 style="font-family:Arial; color:rgb(44, 8, 245); text-align:center;">Edit here</h1>
+<div class="container">
+  <form class="" action="" method="post">
+    <div class="form-group">
+        <label for="Date">Date:</label>
+        <input type="date" class="form-control" id="datToday" name="datToday" [ngModel]="user_data.dat_sale" value="user_data.dat_sale" [readonly]=true>
+    </div>
+    <div class="form-group">
+      <label for="customer_name">Name:</label>
+      <input [(ngModel)]="user_data.fk_customer__vchr_name" type="text" value="{{user_data.fk_customer__vchr_name}}" name="customer_name" class="form-control">
+     </div>
+    <div class="form-group w-75">
+        <label for="CustomerPhone">Phone Number:</label>
+        <input [(ngModel)]="user_data.fk_customer__bint_mobile" type="text" name="CustomerPhone" class="form-control" value="{{user_data.fk_customer__bint_mobile}}" [readonly]=true>
+    </div>
+    <div class="form-group">
+        <label  for="Services">Select service:</label>
+        <select [(ngModel)]="user_data.fk_service__pk_bint_id" class="form-control"  id="" name="services">
+          <option *ngFor="let service of lstServices" value="{{service.pk_bint_id}}">{{service.vchr_name}}</option>
+        </select>
+        
+     </div>
+     <div class="form-check-inline">
+        <label class="form-check-label">
+          <input  type="radio" (click)="radio_update(1)" class="form-check-input"  [checked]="user_data.int_paid_status == '1' ? true : false" name="Paid">Paid 
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input  type="radio" (click)="radio_update(0)"  class="form-check-input" [checked]="user_data.int_paid_status == '0' ? true : false" name="Paid">Not Paid
+        </label>
+      </div>
+      <div class="form-group">
+        <label for="amount">Amount:</label>
+        <input [(ngModel)]="user_data.dbl_amount" type="text" (keyup)="findTotal()" name="amount" class="form-control" value="{{user_data.dbl_amount}}">
+      </div>
+      <div class="form-group">
+        <label for="service_charge">Service Charge:</label>
+        <input [(ngModel)]="user_data.dbl_service_charge" type="text" (keyup)="findTotal()" name="service_charge" class="form-control" value="{{user_data.dbl_service_charge}}">
+      </div>
+      <div class="form-group">
+        <label for="total">Total:</label>
+        <input [(ngModel)]="user_data.dbl_total" type="text" name="total" class="form-control" value="{{user_data.dbl_total}}">
+      </div>      
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input  type="radio" (click)="radio_update(1)" class="form-check-input"  [checked]="user_data.int_status == '1' ? true : false" name="completed">Completed 
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input  type="radio" (click)="radio_update(0)"  class="form-check-input" [checked]="user_data.int_status == '0' ? true : false" name="completed">Pending
+        </label>
+      </div>
+      <div class="form-group">
+        <label for="UserName">Reference No:</label>
+        <input [(ngModel)]="user_data.vchr_ref_no" type="text" id="{{user_data.vchr_ref_no}}" name="ref_no" class="form-control" value="" placeholder="Reference no" [readonly]=true>
+      </div>
+      <button (click)="Update(user_data.pk_bint_id)" type="submit" class="btn btn-info">Update</button><br>
+
+  </form>
+ </div>

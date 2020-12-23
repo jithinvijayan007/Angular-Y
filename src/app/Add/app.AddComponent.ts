@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { User } from "./app.Model";
 import { CustomerServiceService } from "../customer-service.service";
 import { Router, RouterModule, Routes } from '@angular/router';
+import { Pipe, PipeTransform } from '@angular/core';
+import { NONE_TYPE } from '@angular/compiler';
+
 
 
 @Component({
@@ -12,6 +15,7 @@ import { Router, RouterModule, Routes } from '@angular/router';
 export class AddComponent {
   todays_date = new Date();
   services = [];
+  
 
   constructor(public custservice:CustomerServiceService,
     private route: Router){
@@ -28,6 +32,8 @@ export class AddComponent {
       console.log(res);
       
       this.services = res['data'];
+      console.log("dssfd",this.services);
+      
     },err =>{
       console.log(err)
     });
@@ -35,20 +41,40 @@ export class AddComponent {
 
   Add(){
           
-
-          if((this.UserModel.bint_mobile.length != "10") && typeof(this.UserModel.bint_mobile == typeof("abc"))){
-            alert("Enter valid Phone Number")
-            return false
-            }
-          if ((this.UserModel.bint_mobile.length > "9") && (this.UserModel.vchr_name.length < "1")){
-            alert("Please enter the name Also ")
-            return false
-          }
+          console.log(this.UserModel);
+          
+          // if(String(this.UserModel.bint_mobile).length != 10 && !Number.isInteger(this.UserModel.bint_mobile)){
+          //   alert("Enter valid Phone Number")
+          //   return false
+          //   }
+          // if (String(this.UserModel.bint_mobile).length > 9 && (this.UserModel.vchr_name.length < "1")){
+          //   alert("Please enter the name also ")
+          //   return false
+          // }
           // if ((this.UserModel.dbl_amount == "") !! (this.UserModel.dbl_service_charge == "")){
           //   alert("Please enter the valid amount ")
           //   return false
           // }
           
+          // if((this.UserModel.bint_mobile.length != 10) ){
+          //   alert("Enter a valid mobile number")
+          //   return false;
+          // }
+          // if((this.UserModel.bint_mobile.length) == 10 && (this.UserModel.vchr_name==" ")){
+          //   alert("Enter the name also")
+          //   return false;
+          // }
+          //  if ((this.UserModel.vchr_service_name == "") && (this.UserModel.int_paid_status == null) && (this.UserModel.int_status == null) && (this.UserModel.dbl_amount == null) && (this.UserModel.dbl_service_charge == null)){
+          //   alert("All fields are required")
+          //   return false;
+          //  }
+          if((this.UserModel.bint_mobile.length != 10)){
+              alert("Enter valid Phone Number")
+              return false
+          }
+          
+          
+           
 
 
           this.UserModels.push(this.UserModel);

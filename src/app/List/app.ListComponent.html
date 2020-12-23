@@ -6,7 +6,9 @@
 
           <div class="form-group">
               <div class="col-md-6">
-                <input [(ngModel)]=ListModel.dat_from class="form-control" id="focusedInput"  type="date" placeholder="From Date" name="dat_from" required>&nbsp;&nbsp;&nbsp;&nbsp;
+                <label for="dat_from">From Date :</label>
+                <input [(ngModel)]=ListModel.dat_from class="form-control" id="focusedInput"  type="date" placeholder="From Date" name="dat_from" required><br>
+                <label for="dat_to">To Date :</label>
                 <input [(ngModel)]=ListModel.dat_to class="form-control" id="focusedInput"  type="date" placeholder="To Date" name="dat_to" required>
 
 
@@ -21,7 +23,7 @@
               <option  value="">---Select---</option>
               <option  value="1">Completed</option>
               <option  value="0">Pending</option>
-              <option  value="3">All</option>
+              <option  value="2">All</option>
 
             </select>
         </div>
@@ -36,7 +38,7 @@
         <option value="">---Select---</option>
         <option  value="1">Paid</option>
         <option  value="0">Not Paid</option>
-        <option  value="3">All</option>
+        <option  value="2">All</option>
 
       </select>
   </div>
@@ -50,29 +52,4 @@
         </div>
 
 
-        <h1 style="color:black; text-align:center;"> List</h1>
-<div class="container">
-  <div class="jumbotron">
-<table class="table table-success table-striped">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Gender</th>
-        <th>Date of Birth</th>
-        <th>District</th>
-        <th>Detail</th>
-        <th>Update</th>
-        <th>Delete</th>
         
-      </tr>
-      <tr *ngFor = "let user of ins_data">
-        <td>{{ user.dat_created}}</td>
-        <td>{{ user.dbl_total }}</td>
-        <!-- <td>{{ user.dat_dob | date }}</td>
-        <td>{{ user.vchr_district }}</td> -->
-        
-        
-        
-      </tr>
-    </thead>
-  </table>
