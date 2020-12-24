@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router, RouterModule, Routes } from '@angular/router';
 
-const baseUrl = 'http://127.0.0.1:8000/';
+const baseUrl = 'http://192.168.0.11:8000/';
 
 @Injectable({
   providedIn: 'root'
@@ -82,7 +82,7 @@ export class CustomerServiceService {
 
   update(url, data) {
     
-   console.log("xxx", data);
+   console.log("xxx", data);  
    
     return this.http.put(baseUrl+url, data);
 }

@@ -15,6 +15,7 @@ import { NONE_TYPE } from '@angular/compiler';
 export class AddComponent {
   todays_date = new Date();
   services = [];
+  int_validation_status =0;
   
 
   constructor(public custservice:CustomerServiceService,
@@ -68,10 +69,44 @@ export class AddComponent {
           //   alert("All fields are required")
           //   return false;
           //  }
-          if((this.UserModel.bint_mobile.length != 10)){
-              alert("Enter valid Phone Number")
-              return false
+
+          if(this.UserModel.bint_mobile != ""){
+            if(String(this.UserModel.bint_mobile).length==10 || String(this.UserModel.bint_mobile).length==11){
+                if(this.UserModel.vchr_name == ""){
+                  
+                  alert("Enter customer name");
+                  this.int_validation_status=1;
+                  
+                }
+            }
+            else{
+              alert("Enter valid phone number");
+              this.int_validation_status = 1;
+            }
           }
+          if(this.UserModel.vchr_service_name == ""){
+            alert("Select the service");
+            this.int_validation_status = 1;
+          }
+          if(this.UserModel.int_status =="0" ){
+            if(this.UserModel.vchr_ref_no == "")
+            {
+              alert("Enter the reference number");
+              this.int_validation_status = 1;
+            }
+          }
+          if(this.UserModel.vchr_service_name == "" || this.UserModel.dbl_amount == ""){
+            this.int_validation_status = 1;
+            alert("Enter the service details")
+          }
+          if(this.int_validation_status == 0)
+          {
+
+          
+
+      
+              
+          
           
           
            
@@ -79,15 +114,19 @@ export class AddComponent {
 
           this.UserModels.push(this.UserModel);
           console.log(this.UserModel);
+
+          
           
           this.custservice.create('api/customer',this.UserModel).subscribe((res) => {
             console.log(res)
+            this.route.navigate(['List']);
           },err =>{
             console.log(err)
           });
           this.UserModel = new User();
-          this.route.navigate(['List']);
+         
   }
+}
   Total(){
     if(this.UserModel.dbl_amount && this.UserModel.dbl_service_charge){
       this.UserModel.dbl_total = parseInt(this.UserModel.dbl_amount) + parseInt(this.UserModel.dbl_service_charge);

@@ -9,8 +9,8 @@ export class User {
   fk_service: any;
   fk_customer: any;
   dbl_total: any;
-  vchr_name: any;
-  bint_mobile: any;
+  vchr_name: string="";
+  bint_mobile: any="";
   vchr_service_name: any;
   pk_bint_id: any;
   
